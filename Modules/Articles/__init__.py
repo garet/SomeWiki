@@ -101,7 +101,7 @@ class Article(Controller):
         return self.Render('viev.tpl', data)
 
 
-conn = psycopg2.connect(database="SomeWiki", user="garet", password="joker12")
+conn = psycopg2.connect(host='192.168.100.6', database="SomeWiki", user="garet", password="joker12")
 obj = SqlMaker(conn=conn, type_db='pg', pref='tbl_', debug=True)
 
 model = Article_Model(obj)
@@ -120,3 +120,7 @@ print(obj.FetchOne())
 #param = SqlFuncs.Now
 #print(type(param))
 #print(param)
+#obj.Delete('{pref}articles')
+#obj.Execute()
+#obj.Delete('{pref}articles_texts')
+#obj.Execute()
